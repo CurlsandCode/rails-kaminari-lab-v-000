@@ -3701,3 +3701,30 @@ Processing by SongsController#index as HTML
   [1m[35mSong Load (2.8ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0
   Rendered songs/index.html.erb within layouts/application (32.4ms)
 Completed 200 OK in 383ms (Views: 377.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 110.14.193.114 at 2017-12-08 13:16:39 +0000
+Cannot render console from 110.14.193.114! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/songs/new" for 110.14.193.114 at 2017-12-08 13:17:30 +0000
+Cannot render console from 110.14.193.114! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (510.5ms)
+  Rendered songs/new.html.erb within layouts/application (524.4ms)
+Completed 200 OK in 533ms (Views: 531.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 110.14.193.114 at 2017-12-08 13:17:40 +0000
+Cannot render console from 110.14.193.114! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CsFUwnRoKF8y7lKUSuPYbg1umh534RQz7Um0hDif2TKgnHuAsHtBq6Mi7a0s5fp9SFUCDMVi9aFXnhVjO9/0DQ==", "song"=>{"title"=>"lala", "artist_name"=>"Lala"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.7ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Lala"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lala"], ["created_at", "2017-12-08 13:17:40.208386"], ["updated_at", "2017-12-08 13:17:40.208386"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "lala"], ["artist_id", 7], ["created_at", "2017-12-08 13:17:40.215163"], ["updated_at", "2017-12-08 13:17:40.215163"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.141.103:50049/songs/1019
+Completed 302 Found in 41ms (ActiveRecord: 10.5ms)
